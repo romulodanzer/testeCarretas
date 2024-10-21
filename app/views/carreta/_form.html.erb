@@ -1,0 +1,37 @@
+<%= form_with(model: carretum) do |form| %>
+  <% if carretum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carretum.errors.count, "error") %> prohibited this carretum from being saved:</h2>
+
+      <ul>
+        <% carretum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :placa %>
+    <%= form.text_field :placa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tamanho %>
+    <%= form.text_field :tamanho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eixos %>
+    <%= form.number_field :eixos %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

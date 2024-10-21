@@ -1,0 +1,47 @@
+<%= form_with(model: vistorium) do |form| %>
+  <% if vistorium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vistorium.errors.count, "error") %> prohibited this vistorium from being saved:</h2>
+
+      <ul>
+        <% vistorium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :carreta_id %>
+    <%= form.text_field :carreta_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vistoriador %>
+    <%= form.text_field :vistoriador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destino %>
+    <%= form.text_field :destino %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_vistoria %>
+    <%= form.text_field :tipo_vistoria %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arquivo_pdf %>
+    <%= form.text_field :arquivo_pdf %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

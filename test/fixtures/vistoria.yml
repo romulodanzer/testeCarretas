@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carreta: one
+  vistoriador: MyString
+  destino: MyString
+  tipo_vistoria: MyString
+  data: 2024-10-19
+  arquivo_pdf: MyString
+
+two:
+  carreta: two
+  vistoriador: MyString
+  destino: MyString
+  tipo_vistoria: MyString
+  data: 2024-10-19
+  arquivo_pdf: MyString

@@ -1,0 +1,24 @@
+<h1>Usuários Pendentes para Aprovação</h1>
+
+<% if @users.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Aprovar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td>
+            <%= link_to 'Aprovar', approve_user_path(user), method: :patch, data: { confirm: 'Tem certeza que deseja aprovar este usuário?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Não há usuários pendentes para aprovação.</p>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @carretum.placa %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @carretum.tipo %>
+</p>
+
+<p>
+  <strong>Tamanho:</strong>
+  <%= @carretum.tamanho %>
+</p>
+
+<p>
+  <strong>Eixos:</strong>
+  <%= @carretum.eixos %>
+</p>
+
+<%= link_to 'Edit', edit_carretum_path(@carretum) %> |
+<%= link_to 'Back', carreta_path %>

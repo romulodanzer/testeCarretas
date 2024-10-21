@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gestão de Carretas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <span class="navbar-text">
+            <strong>Usuário:</strong> <%= current_user.email %>
+          </span>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filial: <%= current_user.current_filial.try(:nome) || 'Selecione' %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% current_user.filials.each do |filial| %>
+              <a class="dropdown-item" href="<%= switch_filial_path(filial) %>"><%= filial.nome %></a>
+            <% end %>
+          </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

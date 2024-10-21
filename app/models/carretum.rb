@@ -1,0 +1,2 @@
+class Carretum < ApplicationRecord
+end

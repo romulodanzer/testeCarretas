@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carreta:</strong>
+  <%= @vistorium.carreta_id %>
+</p>
+
+<p>
+  <strong>Vistoriador:</strong>
+  <%= @vistorium.vistoriador %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @vistorium.destino %>
+</p>
+
+<p>
+  <strong>Tipo vistoria:</strong>
+  <%= @vistorium.tipo_vistoria %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @vistorium.data %>
+</p>
+
+<p>
+  <strong>Arquivo pdf:</strong>
+  <%= @vistorium.arquivo_pdf %>
+</p>
+
+<%= link_to 'Edit', edit_vistorium_path(@vistorium) %> |
+<%= link_to 'Back', vistoria_path %>
